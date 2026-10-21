@@ -3,6 +3,7 @@ import os
 import joblib
 import pandas as pd
 import streamlit as st
+from download_assets import ensure_assets
 
 DATA_FILE = "ferry_model_data.csv"
 MODEL_DIR = "saved_models"
