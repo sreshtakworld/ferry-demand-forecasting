@@ -100,6 +100,13 @@ def classify_sales(value):
 # 1. LOAD AND VALIDATE DATA
 # --------------------------------------------------
 
+try:
+    with st.spinner("Preparing dataset and trained models..."):
+        ensure_assets()
+except Exception as exc:
+    st.error(f"Could not download required assets: {exc}")
+    st.stop()
+    
 if not os.path.exists(DATA_FILE):
     st.error(f"Dataset not found: {DATA_FILE}")
     st.stop()
